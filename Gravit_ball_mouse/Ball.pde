@@ -2,7 +2,7 @@ class Ball {
   PVector location;
   PVector velocity;
   PVector acceleration;
-
+  Rectangle[] faces;
 
 
   Ball() {
@@ -12,7 +12,7 @@ class Ball {
   }
 
   void update() {
-    PVector mouse = new PVector (mouseX, mouseY);
+    PVector mouse = new PVector (faces.x, faces.y);
     mouse.sub(location);
     mouse.setMag(1);
     acceleration = mouse;
@@ -24,6 +24,6 @@ class Ball {
 
   void display() {
     fill(0, 255, 0);
-    ellipse(location.x,location.y,20,20);
+    ellipse(location.x, location.y, 20, 20);
   }
 }
